@@ -26,6 +26,7 @@ body {
   font-family: var(--font-body);
   color: #333;
   overflow-x: hidden;
+  background: white;
 }
 
 /* Mega Menu */
@@ -44,21 +45,6 @@ body {
   pointer-events: auto;
 }
 
-/* Hero Gradient */
-.hero-gradient {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-}
-
-/* Stats Counter Animation */
-@keyframes countUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.stat-card {
-  animation: countUp 0.6s ease-out forwards;
-}
-
 /* Card Hover Effects */
 .category-card {
   transition: all 0.3s ease;
@@ -66,7 +52,7 @@ body {
 
 .category-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 /* Scrollbar */
@@ -85,40 +71,6 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #8a1040;
-}
-
-/* Button Styles */
-.btn-primary {
-  background: linear-gradient(135deg, #a7144c, #c41e60);
-  color: white;
-  padding: 12px 28px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  background: linear-gradient(135deg, #8a1040, #a7144c);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(167, 20, 76, 0.3);
-}
-
-.btn-outline {
-  background: transparent;
-  color: white;
-  padding: 12px 28px;
-  border-radius: 8px;
-  font-weight: 600;
-  border: 2px solid white;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.btn-outline:hover {
-  background: white;
-  color: #1a1a2e;
 }
 
 /* Animations */

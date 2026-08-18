@@ -18,14 +18,14 @@ export default function Testimonials() {
   }, [isAutoPlaying]);
 
   return (
-    <section className="py-20 bg-[var(--color-secondary)]">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-block text-gray-400 text-sm font-semibold mb-4">
+          <div className="text-gray-500 text-sm font-semibold mb-4 uppercase tracking-wider">
             What They Say About Us
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Testimonials
           </h2>
         </div>
@@ -43,7 +43,7 @@ export default function Testimonials() {
             >
               {testimonials.map((testimonial, idx) => (
                 <div key={idx} className="w-full flex-shrink-0 px-4">
-                  <div className="bg-white rounded-2xl p-8 md:p-12 text-center relative">
+                  <div className="bg-white rounded-2xl p-8 md:p-12 text-center shadow-sm border border-gray-100">
                     <p className="text-gray-700 text-lg leading-relaxed mb-8 italic">
                       &ldquo;{testimonial.quote}&rdquo;
                     </p>
@@ -67,7 +67,7 @@ export default function Testimonials() {
           {/* Navigation Arrows */}
           <button
             onClick={() => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-700 hover:bg-[var(--color-primary)] hover:text-white transition-all hidden md:flex"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-700 hover:bg-gray-50 transition-all hidden md:flex border border-gray-200"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -75,7 +75,7 @@ export default function Testimonials() {
           </button>
           <button
             onClick={() => setCurrent((prev) => (prev + 1) % testimonials.length)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-700 hover:bg-[var(--color-primary)] hover:text-white transition-all hidden md:flex"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-700 hover:bg-gray-50 transition-all hidden md:flex border border-gray-200"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -91,7 +91,7 @@ export default function Testimonials() {
                 className={`w-3 h-3 rounded-full transition-all ${
                   current === idx
                     ? "bg-[var(--color-primary)] w-8"
-                    : "bg-white/30 hover:bg-white/50"
+                    : "bg-gray-300 hover:bg-gray-400"
                 }`}
               />
             ))}

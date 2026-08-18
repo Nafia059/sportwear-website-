@@ -4,39 +4,36 @@ import { stats } from "@/lib/navigation-data";
 
 export default function Hero() {
   return (
-    <section className="hero-gradient relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24 relative z-10">
+    <section className="bg-white py-12 lg:py-20">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="animate-slideInLeft">
-            <div className="inline-block bg-white/10 backdrop-blur-sm text-white text-sm font-medium px-4 py-2 rounded-full mb-6">
-              PRIVATE LABEL &bull; SIALKOT PAKISTAN
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight uppercase">
               Custom Sports Apparel Manufacturer for Global Brands
             </h1>
-            <p className="text-gray-300 text-lg mb-8 leading-relaxed max-w-lg">
+            <p className="text-gray-600 text-lg mb-8 leading-relaxed max-w-lg">
               Custom ski & snow wear, sportswear, streetwear and bags for brands, teams,
               wholesalers and private label buyers. In-house production, premium quality
               control, and export-ready service.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 mb-8">
-              <a href="/contact-us" className="btn-primary text-base px-8 py-3">
+            <div className="flex flex-wrap items-center gap-6 mb-8">
+              <a href="/contact-us" className="bg-green-600 hover:bg-green-700 text-white text-base font-semibold px-8 py-3 rounded-lg transition-colors">
                 Request A Quote
               </a>
               <a
                 href="https://api.whatsapp.com/send/?phone=923328624992&text&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline text-base px-8 py-3"
+                className="text-green-600 hover:text-green-700 font-semibold text-base"
               >
                 WhatsApp Us
               </a>
             </div>
 
-            <p className="text-gray-400 text-sm mb-8">
+            <p className="text-gray-500 text-sm mb-8">
               Send your tech pack, logo, artwork, measurement sheet, or reference image
             </p>
 
@@ -52,7 +49,7 @@ export default function Hero() {
               ].map((tag, idx) => (
                 <span
                   key={idx}
-                  className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full border border-white/20"
+                  className="inline-flex items-center gap-2 bg-gray-50 text-gray-700 text-sm px-4 py-2 rounded-full border border-gray-200"
                 >
                   <span className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center text-xs text-white">✓</span>
                   {tag}
@@ -63,45 +60,37 @@ export default function Hero() {
 
           {/* Right - Placeholder for Product Images */}
           <div className="relative hidden lg:block">
-            <div className="relative w-full h-[450px] bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center">
+            <div className="relative w-full h-[450px] bg-gray-50 rounded-2xl border border-gray-200 flex items-center justify-center">
               {/* 
-                PLACEHOLDER: Replace this div with your product images
-                Upload images to public/ folder and use:
-                <Image src="/your-image.webp" alt="Description" fill className="object-cover rounded-2xl" />
+                PLACEHOLDER: Replace with your product images
+                Upload to public/ folder and use:
+                <Image src="/hero-products.webp" alt="Products" fill className="object-contain" />
               */}
-              <div className="text-center text-white/50">
+              <div className="text-center text-gray-400">
                 <svg className="w-20 h-20 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                <p className="text-sm">Product Images Placeholder</p>
-                <p className="text-xs mt-1">Upload to public/ folder</p>
+                <p className="text-sm font-medium text-gray-500">Product Images Placeholder</p>
+                <p className="text-xs mt-1 text-gray-400">Upload to public/ folder</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Stats Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="stat-card bg-white/10 backdrop-blur-sm rounded-xl p-5 text-center border border-white/20 hover:bg-white/20 transition-all"
-              style={{ animationDelay: `${idx * 0.1}s` }}
+              className="text-center p-6 bg-gray-50 rounded-xl border border-gray-100"
             >
-              <div className="text-2xl md:text-3xl font-bold text-white mb-1">
+              <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
                 {stat.value}
               </div>
-              <div className="text-gray-300 text-xs">{stat.label}</div>
+              <div className="text-gray-500 text-sm">{stat.label}</div>
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Bottom Wave */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-        <svg viewBox="0 0 1200 120" className="w-full h-auto">
-          <path d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z" fill="white" />
-        </svg>
       </div>
     </section>
   );
