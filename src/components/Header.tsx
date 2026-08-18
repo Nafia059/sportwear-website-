@@ -32,7 +32,7 @@ export default function Header() {
     <>
       {/* Main Header */}
       <header className="bg-white sticky top-0 z-50 border-b border-gray-100">
-        <div className="max-w-[1400px] mx-auto px-8">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="flex items-center justify-between h-[90px]">
             {/* Logo */}
             <Link href="/" className="flex items-center shrink-0 mr-8">

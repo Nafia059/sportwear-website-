@@ -14,7 +14,7 @@ const stepColors = [
 export default function HowItWorks() {
   return (
     <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="text-[var(--color-primary)] text-sm font-semibold mb-4 uppercase tracking-wider">

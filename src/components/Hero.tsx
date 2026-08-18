@@ -5,11 +5,11 @@ import { stats } from "@/lib/navigation-data";
 export default function Hero() {
   return (
     <section className="bg-white py-16 lg:py-24">
-      <div className="max-w-[1400px] mx-auto px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
-          <div>
-            <h1 className="text-5xl md:text-6xl lg:text-[72px] font-black text-gray-900 mb-8 leading-[1.05] uppercase tracking-tight">
+          <div className="pt-8">
+            <h1 className="text-4xl md:text-5xl lg:text-[64px] font-black text-gray-900 mb-6 leading-[1.1] uppercase tracking-tight">
               Custom Sports
               <br />
               Apparel
@@ -18,14 +18,14 @@ export default function Hero() {
               <br />
               Global Brands
             </h1>
-            <p className="text-gray-600 text-lg mb-10 leading-relaxed max-w-xl">
+            <p className="text-gray-600 text-lg mb-8 leading-relaxed max-w-xl">
               Custom ski & snow wear, sportswear, streetwear and bags for brands, teams,
               wholesalers and private label buyers. In-house production, premium quality
               control, and export-ready service.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-6 mb-10">
+            <div className="flex flex-wrap items-center gap-6 mb-6">
               <a href="/contact-us" className="bg-green-600 hover:bg-green-700 text-white text-base font-semibold px-8 py-3.5 rounded-lg transition-colors">
                 Request A Quote
               </a>
@@ -66,7 +66,7 @@ export default function Hero() {
 
           {/* Right - Placeholder for Product Images */}
           <div className="relative hidden lg:block">
-            <div className="relative w-full h-[500px] bg-gray-50 rounded-2xl border border-gray-200 flex items-center justify-center">
+            <div className="relative w-full h-[480px] bg-gray-50 rounded-2xl border border-gray-200 flex items-center justify-center">
               {/* 
                 PLACEHOLDER: Replace with your product images
                 Upload to public/ folder and use:
