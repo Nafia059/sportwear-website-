@@ -30,33 +30,33 @@ export default function Header() {
 
   return (
     <>
-      {/* Main Header - White, no top bar */}
-      <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-between h-20">
+      {/* Main Header */}
+      <header className="bg-white sticky top-0 z-50 border-b border-gray-100">
+        <div className="max-w-[1400px] mx-auto px-8">
+          <div className="flex items-center justify-between h-[90px]">
             {/* Logo */}
-            <Link href="/" className="flex items-center shrink-0">
+            <Link href="/" className="flex items-center shrink-0 mr-8">
               <Image
                 src="/Core-Sports-Logo.webp"
                 alt="Core Sportswears"
-                width={180}
-                height={60}
-                className="h-16 w-auto"
+                width={200}
+                height={70}
+                className="h-[70px] w-auto"
                 priority
               />
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-8 flex-1 justify-end">
               {navigationData.map((item, idx) => (
                 <div key={idx} className="nav-item relative">
                   <Link
                     href={item.href}
-                    className="px-4 py-2 text-[13px] font-semibold text-gray-800 hover:text-[var(--color-primary)] transition-colors flex items-center gap-1 whitespace-nowrap uppercase tracking-wide"
+                    className="text-[13px] font-semibold text-gray-800 hover:text-[var(--color-primary)] transition-colors flex items-center gap-1.5 whitespace-nowrap uppercase tracking-wider"
                   >
                     {item.label}
                     {item.children && (
-                      <svg className="w-3 h-3 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     )}
@@ -67,8 +67,8 @@ export default function Header() {
             </nav>
 
             {/* Search */}
-            <div className="hidden lg:flex items-center">
-              <button className="p-2 text-gray-600 hover:text-[var(--color-primary)]">
+            <div className="hidden lg:flex items-center ml-6">
+              <button className="p-2 text-gray-500 hover:text-[var(--color-primary)]">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
               </button>
             </div>
