@@ -34,14 +34,14 @@ export default function HowItWorks() {
           {howItWorksSteps.map((step, idx) => (
             <div
               key={idx}
-              className="relative bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-gray-200 transition-all group"
+              className="relative bg-gray-50 rounded-2xl p-8 pt-12 border border-gray-100 hover:border-gray-200 transition-all group"
             >
               {/* Step Number Badge */}
-              <div className={`absolute -top-4 -left-4 w-14 h-14 ${stepColors[idx]} text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-lg`}>
+              <div className={`absolute top-4 left-4 w-12 h-12 ${stepColors[idx]} text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg`}>
                 {step.step}
               </div>
 
-              <div className="pt-6">
+              <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {step.title}
                 </h3>
