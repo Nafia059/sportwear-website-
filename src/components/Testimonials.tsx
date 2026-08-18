@@ -3,8 +3,6 @@
 import { useState, useEffect } from "react";
 import { testimonials } from "@/lib/navigation-data";
 
-const avatarColors = ["bg-blue-500", "bg-pink-500", "bg-green-500"];
-
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -50,7 +48,7 @@ export default function Testimonials() {
 
                     {/* Author */}
                     <div className="flex items-center justify-center gap-4">
-                      <div className={`w-14 h-14 rounded-full ${avatarColors[idx % avatarColors.length]} flex items-center justify-center text-white font-bold text-xl`}>
+                      <div className="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 font-bold text-xl overflow-hidden">
                         {testimonial.author[0]}
                       </div>
                       <div className="text-left">

@@ -23,10 +23,6 @@ export default function HowItWorks() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             From Idea To Bulk Production
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Our streamlined process ensures your custom sportswear is manufactured
-            to perfection, from concept to delivery.
-          </p>
         </div>
 
         {/* Steps Grid */}
@@ -34,7 +30,7 @@ export default function HowItWorks() {
           {howItWorksSteps.map((step, idx) => (
             <div
               key={idx}
-              className="relative bg-gray-50 rounded-2xl p-8 pt-12 border border-gray-100 hover:border-gray-200 transition-all group"
+              className="relative bg-gray-50 rounded-2xl p-8 pt-16 border border-gray-100 hover:border-gray-200 transition-all group"
             >
               {/* Step Number Badge */}
               <div className={`absolute top-4 left-4 w-12 h-12 ${stepColors[idx]} text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg`}>

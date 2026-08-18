@@ -1,25 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { categories } from "@/lib/navigation-data";
 
-/*
-  PLACEHOLDER IMAGES: 
-  Upload these images to public/ folder:
-  - ski-snow-wear.webp   (for Ski & Snow Wear)
-  - streetwear.webp      (for Streetwear)
-  - sportswear.webp      (for Sportswear)
-  - bags.webp            (for Bags)
-  
-  Then update the src paths below.
-*/
-
-const categoryPlaceholders: Record<string, { bgColor: string; label: string; imgSrc?: string }> = {
-  snowflake: { bgColor: "from-cyan-500 to-blue-600", label: "Ski & Snow Wear", imgSrc: "/ski-snow-wear.webp" },
-  shirt: { bgColor: "from-purple-500 to-pink-600", label: "Streetwear", imgSrc: "/streetwear.webp" },
-  trophy: { bgColor: "from-orange-500 to-red-600", label: "Sportswear", imgSrc: "/sportswear.webp" },
-  briefcase: { bgColor: "from-green-500 to-emerald-600", label: "Bags", imgSrc: "/bags.webp" },
+const categoryGradients: Record<string, string> = {
+  snowflake: "from-cyan-500 to-blue-600",
+  shirt: "from-purple-500 to-pink-600",
+  trophy: "from-orange-500 to-red-600",
+  briefcase: "from-green-500 to-emerald-600",
 };
 
 export default function CoreCategories() {
@@ -43,7 +31,7 @@ export default function CoreCategories() {
         {/* Categories Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {categories.map((category, idx) => {
-            const catStyle = categoryPlaceholders[category.icon] || categoryPlaceholders.trophy;
+            const gradient = categoryGradients[category.icon] || "from-gray-500 to-gray-600";
             return (
               <Link
                 key={idx}
@@ -51,17 +39,13 @@ export default function CoreCategories() {
                 className="category-card group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[var(--color-primary)]/30"
               >
                 {/* Image Placeholder */}
-                <div className={`relative h-56 bg-gradient-to-br ${catStyle.bgColor} overflow-hidden`}>
-                  {/* 
-                    When you have images, replace the placeholder below with:
-                    <Image src={catStyle.imgSrc} alt={category.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
-                  */}
+                <div className={`relative h-56 bg-gradient-to-br ${gradient} overflow-hidden`}>
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white">
                       <svg className="w-16 h-16 mx-auto mb-2 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
-                      <p className="text-xs opacity-80">{catStyle.label}</p>
+                      <p className="text-xs opacity-80">{category.title}</p>
                     </div>
                   </div>
                 </div>
