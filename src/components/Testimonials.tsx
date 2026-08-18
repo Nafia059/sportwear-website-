@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { testimonials } from "@/lib/navigation-data";
 
+const avatarColors = ["bg-blue-500", "bg-pink-500", "bg-green-500"];
+
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -20,7 +22,7 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-block bg-white/10 text-white text-sm font-semibold px-4 py-2 rounded-full mb-4">
+          <div className="inline-block text-gray-400 text-sm font-semibold mb-4">
             What They Say About Us
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -42,21 +44,14 @@ export default function Testimonials() {
               {testimonials.map((testimonial, idx) => (
                 <div key={idx} className="w-full flex-shrink-0 px-4">
                   <div className="bg-white rounded-2xl p-8 md:p-12 text-center relative">
-                    {/* Quote Icon */}
-                    <div className="absolute -top-6 left-8 text-6xl text-[var(--color-primary)] opacity-30 font-serif">
-                      &ldquo;
-                    </div>
-
-                    <p className="text-gray-700 text-lg leading-relaxed mb-8 relative z-10 italic">
+                    <p className="text-gray-700 text-lg leading-relaxed mb-8 italic">
                       &ldquo;{testimonial.quote}&rdquo;
                     </p>
 
                     {/* Author */}
                     <div className="flex items-center justify-center gap-4">
-                      <div className="w-14 h-14 rounded-full bg-gray-200 overflow-hidden">
-                        <div className="w-full h-full bg-[var(--color-primary)]/20 flex items-center justify-center text-[var(--color-primary)] font-bold text-xl">
-                          {testimonial.author[0]}
-                        </div>
+                      <div className={`w-14 h-14 rounded-full ${avatarColors[idx % avatarColors.length]} flex items-center justify-center text-white font-bold text-xl`}>
+                        {testimonial.author[0]}
                       </div>
                       <div className="text-left">
                         <h4 className="font-bold text-gray-900">{testimonial.author}</h4>

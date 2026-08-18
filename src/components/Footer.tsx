@@ -1,27 +1,37 @@
-import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { footerLinks } from "@/lib/navigation-data";
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--color-darker)] text-white">
+    <footer className="bg-white text-gray-900 border-t border-gray-100">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
             <Link href="/" className="inline-block mb-6">
-              <div className="text-2xl font-bold">
-                <span className="text-[var(--color-primary)]">CORE</span>
-                <span className="text-white"> SPORTSWEARS</span>
-              </div>
+              <Image
+                src="/Core-Sports-Logo.webp"
+                alt="Core Sportswears"
+                width={180}
+                height={60}
+                className="h-14 w-auto"
+              />
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Sadra Badra Town, Daak Wala Stop Daska Road, 51310 Sialkot, Pakistan.
-            </p>
-            <div className="space-y-2 text-sm text-gray-400">
-              <p>📞 +92 339 8624992</p>
-              <p>✉️ coresportswears@gmail.com</p>
+            <div className="space-y-3 text-sm text-gray-600">
+              <p className="flex items-start gap-2">
+                <svg className="w-4 h-4 mt-0.5 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                Sadra Badra Town, Daak Wala Stop Daska Road, 51310 Sialkot, Pakistan.
+              </p>
+              <p className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                +92 339 8624992
+              </p>
+              <p className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                coresportswears@gmail.com
+              </p>
             </div>
             {/* Social Icons */}
             <div className="flex gap-3 mt-6">
@@ -31,7 +41,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[var(--color-primary)] transition-colors"
+                  className="w-10 h-10 rounded-full bg-[var(--color-primary)] text-white flex items-center justify-center hover:bg-[var(--color-primary-dark)] transition-colors"
                   aria-label={social.label}
                 >
                   <SocialIcon name={social.icon} />
@@ -42,16 +52,13 @@ export default function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 className="text-lg font-bold mb-6 relative">
-              Company
-              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-[var(--color-primary)] mt-2" />
-            </h3>
+            <h3 className="text-lg font-bold mb-6 uppercase tracking-wide">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link, idx) => (
                 <li key={idx}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 text-sm hover:text-[var(--color-primary)] transition-colors"
+                    className="text-gray-600 text-sm hover:text-[var(--color-primary)] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -62,16 +69,13 @@ export default function Footer() {
 
           {/* Collection Links */}
           <div>
-            <h3 className="text-lg font-bold mb-6 relative">
-              Collection
-              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-[var(--color-primary)] mt-2" />
-            </h3>
+            <h3 className="text-lg font-bold mb-6 uppercase tracking-wide">Collection</h3>
             <ul className="space-y-3">
               {footerLinks.collections.map((link, idx) => (
                 <li key={idx}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 text-sm hover:text-[var(--color-primary)] transition-colors"
+                    className="text-gray-600 text-sm hover:text-[var(--color-primary)] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -82,15 +86,34 @@ export default function Footer() {
 
           {/* Certificates */}
           <div>
-            <h3 className="text-lg font-bold mb-6 relative">
-              Certificates
-              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-[var(--color-primary)] mt-2" />
-            </h3>
-            <div className="bg-white/5 rounded-lg p-4">
-              <div className="text-center text-gray-400 text-sm">
-                <p className="mb-2">✅ SCCI Member</p>
-                <p className="mb-2">✅ ISO Certified</p>
-                <p>✅ Export Ready</p>
+            <h3 className="text-lg font-bold mb-6 uppercase tracking-wide">Certificates</h3>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">SCCI Member</p>
+                  <p className="text-xs text-gray-500">Sialkot Chamber</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">ISO Certified</p>
+                  <p className="text-xs text-gray-500">Quality Management</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">Export Ready</p>
+                  <p className="text-xs text-gray-500">Worldwide Shipping</p>
+                </div>
               </div>
             </div>
           </div>
@@ -98,13 +121,13 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-500 text-sm">
               Core Sportswears. &copy; {new Date().getFullYear()} All Rights Reserved
             </p>
-            <div className="flex gap-6 text-sm text-gray-400">
+            <div className="flex gap-6 text-sm text-gray-500">
               <Link href="/privacy-policy" className="hover:text-[var(--color-primary)] transition-colors">
                 Privacy Policy
               </Link>

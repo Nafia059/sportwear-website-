@@ -2,13 +2,31 @@
 
 import { howItWorksSteps } from "@/lib/navigation-data";
 
+const stepColors = [
+  "bg-red-500",
+  "bg-orange-500",
+  "bg-yellow-500",
+  "bg-green-500",
+  "bg-blue-500",
+  "bg-purple-500",
+];
+
+const stepIcons = [
+  "📐", // Share Your Design
+  "🎨", // Confirm Materials
+  "✂️", // Sample Development
+  "🏭", // Bulk Production
+  "✅", // Quality Check
+  "📦", // Packing & Shipment
+];
+
 export default function HowItWorks() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-block bg-[var(--color-primary)]/10 text-[var(--color-primary)] text-sm font-semibold px-4 py-2 rounded-full mb-4">
+          <div className="inline-block text-[var(--color-primary)] text-sm font-semibold mb-4">
             How It Works
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -27,12 +45,12 @@ export default function HowItWorks() {
               key={idx}
               className="relative bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-[var(--color-primary)]/30 transition-all group"
             >
-              {/* Step Number */}
-              <div className="absolute -top-4 -left-4 w-12 h-12 bg-[var(--color-primary)] text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg">
+              {/* Step Number Badge */}
+              <div className={`absolute -top-4 -left-4 w-14 h-14 ${stepColors[idx]} text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-lg`}>
                 {step.step}
               </div>
 
-              <div className="pt-4">
+              <div className="pt-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[var(--color-primary)] transition-colors">
                   {step.title}
                 </h3>
@@ -40,11 +58,6 @@ export default function HowItWorks() {
                   {step.description}
                 </p>
               </div>
-
-              {/* Connector Line */}
-              {idx < howItWorksSteps.length - 1 && idx % 3 !== 2 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-[var(--color-primary)]/30" />
-              )}
             </div>
           ))}
         </div>
