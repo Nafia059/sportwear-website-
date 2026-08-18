@@ -5,36 +5,20 @@ import Link from "next/link";
 import Image from "next/image";
 import { navigationData, NavItem } from "@/lib/navigation-data";
 
-function MegaMenuDropdown({ item }: { item: NavItem }) {
+function DropdownMenu({ item }: { item: NavItem }) {
   return (
-    <div className="mega-menu absolute top-full left-0 w-full bg-white shadow-2xl border-t-2 border-[var(--color-primary)] z-50">
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="grid grid-cols-4 gap-8">
-          {item.children?.map((child, idx) => (
-            <div key={idx}>
-              <Link
-                href={child.href}
-                className="block text-sm font-bold text-gray-900 mb-3 uppercase tracking-wide hover:text-[var(--color-primary)] transition-colors"
-              >
-                {child.label}
-              </Link>
-              {child.children && (
-                <ul className="space-y-2">
-                  {child.children.map((subChild, subIdx) => (
-                    <li key={subIdx}>
-                      <Link
-                        href={subChild.href}
-                        className="text-sm text-gray-600 hover:text-[var(--color-primary)] transition-colors"
-                      >
-                        {subChild.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ))}
-        </div>
+    <div className="mega-menu absolute top-full left-0 bg-white shadow-2xl border-t-2 border-[var(--color-primary)] z-50 min-w-[220px]">
+      <div className="py-3">
+        {item.children?.map((child, idx) => (
+          <div key={idx}>
+            <Link
+              href={child.href}
+              className="block px-6 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[var(--color-primary)] transition-colors"
+            >
+              {child.label}
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -81,7 +65,7 @@ export default function Header() {
             <Link href="/" className="flex items-center shrink-0">
               <Image
                 src="/Core-Sports-Logo.webp"
-                alt="Core Sportswears - Manufacturer & exporter of Customised Sport Apparel"
+                alt="Core Sportswears"
                 width={180}
                 height={60}
                 className="h-14 w-auto"
@@ -90,27 +74,27 @@ export default function Header() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-0">
               {navigationData.map((item, idx) => (
-                <div key={idx} className="nav-item relative group">
+                <div key={idx} className="nav-item relative">
                   <Link
                     href={item.href}
-                    className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-[var(--color-primary)] transition-colors flex items-center gap-1"
+                    className="px-3 py-2 text-[13px] font-medium text-gray-700 hover:text-[var(--color-primary)] transition-colors flex items-center gap-0.5 whitespace-nowrap"
                   >
                     {item.label}
                     {item.children && (
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3 h-3 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     )}
                   </Link>
-                  {item.children && <MegaMenuDropdown item={item} />}
+                  {item.children && <DropdownMenu item={item} />}
                 </div>
               ))}
             </nav>
 
-            {/* Language + Search */}
-            <div className="hidden lg:flex items-center gap-3">
+            {/* Search */}
+            <div className="hidden lg:flex items-center">
               <button className="p-2 text-gray-600 hover:text-[var(--color-primary)]">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
               </button>

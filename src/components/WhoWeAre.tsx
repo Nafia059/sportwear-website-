@@ -5,7 +5,7 @@ export default function WhoWeAre() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div>
-            <div className="inline-block text-[var(--color-primary)] text-sm font-semibold mb-4">
+            <div className="text-[var(--color-primary)] text-sm font-semibold mb-4">
               Who we are
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -47,36 +47,21 @@ export default function WhoWeAre() {
             </div>
           </div>
 
-          {/* Right - Factory Image */}
+          {/* Right - Placeholder for Factory Image */}
           <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              {/* Factory/Workers Image Placeholder */}
-              <div className="w-full h-[450px] bg-gradient-to-br from-gray-200 to-gray-300 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-32 h-32 mx-auto mb-4 bg-[var(--color-primary)]/10 rounded-full flex items-center justify-center">
-                      <svg className="w-16 h-16 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                      </svg>
-                    </div>
-                    <p className="text-gray-500 font-medium">In-House Manufacturing Facility</p>
-                    <p className="text-gray-400 text-sm">200+ Machines | Sialkot, Pakistan</p>
-                  </div>
-                </div>
-                {/* Core badge overlay */}
-                <div className="absolute bottom-4 right-4 bg-white rounded-lg px-4 py-2 shadow-lg">
-                  <div className="text-xl font-bold">
-                    <span className="text-[var(--color-primary)]">CORE</span>
-                    <span className="text-gray-900 text-sm block">SPORTSWEARS</span>
-                  </div>
-                </div>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-100 h-[450px] flex items-center justify-center">
+              {/* 
+                PLACEHOLDER: Replace this div with your factory/workers image
+                Upload to public/ folder and use:
+                <Image src="/factory-image.webp" alt="Core Sportswears Factory" fill className="object-cover" />
+              */}
+              <div className="text-center text-gray-400">
+                <svg className="w-20 h-20 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <p className="text-sm font-medium">Factory Image Placeholder</p>
+                <p className="text-xs mt-1">Upload to public/ folder</p>
               </div>
-            </div>
-            {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 bg-[var(--color-primary)] rounded-full flex items-center justify-center shadow-lg">
-              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
             </div>
           </div>
         </div>
